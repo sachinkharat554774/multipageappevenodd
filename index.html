@@ -1,0 +1,50 @@
+<html>
+<head>
+<title> Multipage app by Sachin </title>
+<style>
+* {font-size:30px;}
+.nav {background-color:lightblue;}
+.nav a { color:white; text-decoration:none; padding:10%;}
+h2 {border:solid; width:60%; border-radius:30px;}
+</style>
+
+<script>
+function check()
+{
+event.preventDefault();
+let num = document.getElementById("num");
+let ans = document.getElementById("ans");
+
+if (num.value == "")
+{
+alert("number is empty")
+num.focus();
+ans.innerHTML = "";
+return;
+}
+
+let n = parseInt(num.value);
+let r = n%2 == 0 ? "even" : "odd";
+let msg = "Number is "+r;
+ans.innerHTML = msg;
+}
+</script>
+
+</head>
+
+<body>
+<center>
+<div class="nav">
+	<a href="index.html"> Home </a>
+	<a href="about.html"> About </a>
+</div>
+<h1> Even Odd Finder </h1>
+<form onsubmit="check()">
+<input type="number" placeholder = "enter an integer" id = "num" />
+<br><br>
+<input type="submit" value = "Find" />
+</form>
+<h1 id="ans"> </h1>
+</center>
+</body>
+</html>
